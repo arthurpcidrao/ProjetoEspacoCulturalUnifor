@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/branco_unifor"
+    tools:context=".SettingsPage" >
+
+    <!-- Barra Superior -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/azul_unifor">
+
+        <!-- Layout para ícones futuros -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Logo Unifor -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo"/>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Barra Inferior -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/azul_unifor"
+        android:layout_alignParentBottom="true">
+
+        <!-- Layout para botões -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <!-- Botão Home -->
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/home" />
+
+            <Space
+                android:layout_width="70dp"
+                android:layout_height="match_parent" />
+
+            <!-- Botão Bússola -->
+            <ImageButton
+                android:id="@+id/compassButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/compass" />
+
+            <Space
+                android:layout_width="70dp"
+                android:layout_height="match_parent" />
+
+            <!-- Botão QR -->
+            <ImageButton
+                android:id="@+id/qrButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/qr" />
+
+            <Space
+                android:layout_width="70dp"
+                android:layout_height="match_parent" />
+
+            <!-- Botão Configurações -->
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/settingsButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/settings" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/selected"
+                    android:layout_gravity="bottom" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/configLayout"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="24sp"
+            android:text="Configurações" />
+
+        <!-- Idiomas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/settings_rectangle_bg" >
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="Idiomas" />
+
+            <Space
+                android:layout_width="115dp"
+                android:layout_height="match_parent" />
+
+            <Spinner
+                android:id="@+id/languagesSpinner"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <!-- Notificações -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/settings_rectangle_bg"
+            tools:ignore="UseSwitchCompatOrMaterialXml">
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="Notificações" />
+
+            <Space
+                android:layout_width="210dp"
+                android:layout_height="match_parent" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="sans-serif-thin" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <!-- Suporte/Contato -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/settings_rectangle_bg" >
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="Suporte/Contato" />
+
+            <Space
+                android:layout_width="180dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/supportButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/supportVisibility"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/settings_rectangle_bg_alt"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="E-mail: example@unifor.br" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="Telefone: (85) 98765-4321" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_below="@id/configLayout" >
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rounded"
+            android:fontFamily="sans-serif-thin"
+            android:text="Entrar como Adminstrador"
+            android:textColor="@color/branco_unifor"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

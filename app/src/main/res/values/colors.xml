@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="azul_unifor">#044CF4</color>
+    <color name="branco_unifor">#E4F2FE</color>
+    <color name="settings_rectangle_bg">#BACBFF</color>
+    <color name="settings_rectangle_bg_alt">#D4DEFF</color>
+    <color name="on">#00BF30</color>
+    <color name="off">#FFFFFF</color>
+</resources>
