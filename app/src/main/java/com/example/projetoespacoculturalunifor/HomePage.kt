@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 class HomePage : AppCompatActivity() {
 
     private lateinit var btnSettings: ImageButton;
+    private lateinit var btnQr: ImageButton;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -132,7 +132,8 @@
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:background="@android:color/darker_gray"
-            android:layout_height="200dp"/>
+            android:layout_height="200dp"
+            android:src="@drawable/expocartaz"/>
 
         <Space
             android:layout_width="match_parent"

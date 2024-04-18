@@ -278,10 +278,6 @@
         android:orientation="vertical"
         android:layout_below="@id/configLayout" >
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
-
         <Button
             android:layout_width="200dp"
             android:layout_height="70dp"
@@ -291,6 +287,11 @@
             android:text="Entrar como Adminstrador"
             android:textColor="@color/branco_unifor"
             android:textSize="16sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
     </LinearLayout>
 
 </RelativeLayout>
