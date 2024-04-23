@@ -36,6 +36,7 @@ class SalonsPage : AppCompatActivity() {
     private fun Context.changeScreen(activity: Activity, classs:Class<*>?){
         val intent = Intent(activity, classs);
         startActivity(intent);
+        activity.overridePendingTransition(0, 0); // Definindo nenhuma animação
         activity.finish();
     }
 }
