@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Imagem de fundo -->
+    <ImageView
+        android:id="@+id/imagemFundo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/foto_fundo_inicio"
+        android:scaleType="centerCrop" />
+
+    <!-- Imagem centralizada em cima da imagem de fundo -->
+    <ImageView
+        android:id="@+id/imagemCentral"
+        android:layout_width="115dp"
+        android:layout_height="118dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_unifor_remove" />
+
+    <!-- Terceira imagem abaixo da imagem centralizada -->
+    <ImageView
+        android:id="@+id/imagemEmbaixo"
+        android:layout_width="275dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/imagemCentral"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/espaco_cultural_remove" />
+
+</RelativeLayout>

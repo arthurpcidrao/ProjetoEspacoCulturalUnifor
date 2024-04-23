@@ -8,28 +8,29 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
-class HomePage : AppCompatActivity() {
+class SalonsPage : AppCompatActivity() {
 
     private lateinit var btnSettings: ImageButton;
     private lateinit var btnQr: ImageButton;
-    private lateinit var btnCompass: ImageButton;
+    private lateinit var btnHome: ImageButton;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.home_page)
+        setContentView(R.layout.salons_page)
 
         btnSettings = findViewById(R.id.settingsButton);
         btnQr = findViewById(R.id.qrButton);
-        btnCompass = findViewById(R.id.compassButton);
+        btnHome = findViewById(R.id.homeButton);
 
         btnSettings.setOnClickListener {
             changeScreen(this, SettingsPage::class.java);
         }
 
-        btnCompass .setOnClickListener {
-            changeScreen(this, SalonsPage::class.java);
+        btnHome.setOnClickListener {
+            changeScreen(this, HomePage::class.java);
         }
+
     }
 
     private fun Context.changeScreen(activity: Activity, classs:Class<*>?){
