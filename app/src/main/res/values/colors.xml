@@ -3,9 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080</color>
+    <color name="transparente">#00FFFFFF</color>
+    <color name="selecionado">#05649F</color>
     <color name="azul_unifor">#0676BE</color>
     <color name="verde_unifor">#2F758C</color>
-    <color name="roxo_unifor">#3E0898</color>
+    <color name="roxo_unifor">#6711F3</color>
     <color name="marinho_unifor">#0C007A</color>
     <color name="branco_unifor">#E4F2FE</color>
     <color name="settings_rectangle_bg">#F5F6FA</color>

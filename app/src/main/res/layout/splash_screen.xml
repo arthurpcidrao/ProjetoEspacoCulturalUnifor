@@ -4,14 +4,16 @@
     android:layout_height="match_parent">
 
     <!-- Imagem de fundo -->
+
+    <!-- Imagem centralizada em cima da imagem de fundo -->
+
     <ImageView
         android:id="@+id/imagemFundo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/foto_fundo_inicio"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/foto_fundo_inicio" />
 
-    <!-- Imagem centralizada em cima da imagem de fundo -->
     <ImageView
         android:id="@+id/imagemCentral"
         android:layout_width="115dp"

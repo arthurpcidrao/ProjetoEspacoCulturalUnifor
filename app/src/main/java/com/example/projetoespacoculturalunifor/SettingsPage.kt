@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Spinner
@@ -15,9 +16,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 class SettingsPage : AppCompatActivity(){
 
-    private lateinit var btnHome: ImageButton;
-    private lateinit var btnCompass: ImageButton;
-    private lateinit var btnQr: ImageButton;
+    private lateinit var btnHome: Button;
+    private lateinit var btnCompass: Button;
+    private lateinit var btnQr: Button;
+    private lateinit var admButton: Button;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,7 @@ class SettingsPage : AppCompatActivity(){
         val supportButton = findViewById<ImageButton>(R.id.supportButton)
         var on: Boolean = true
 
+        admButton = findViewById(R.id.settingsAdmButton);
         btnHome = findViewById(R.id.homeButton);
         btnCompass = findViewById(R.id.compassButton);
         btnQr = findViewById(R.id.qrButton);
@@ -54,18 +57,28 @@ class SettingsPage : AppCompatActivity(){
         }
 
         btnHome.setOnClickListener {
-            changeScreen(this, HomePage::class.java);
+            changeScreenWt(this, HomePage::class.java);
         }
 
         btnCompass.setOnClickListener {
-            changeScreen(this, SalonsPage::class.java)
+            changeScreenWt(this, SalonsPage::class.java)
         }
+
+        admButton.setOnClickListener{
+            changeScreen(this, AdmLoginPage::class.java)
+        }
+    }
+
+    private fun Context.changeScreenWt(activity: Activity, classs:Class<*>?){
+        val intent = Intent(activity, classs);
+        startActivity(intent);
+        activity.overridePendingTransition(0, 0); // Definindo nenhuma animação
+        activity.finish();
     }
 
     private fun Context.changeScreen(activity: Activity, classs:Class<*>?){
         val intent = Intent(activity, classs);
         startActivity(intent);
-        activity.overridePendingTransition(0, 0); // Definindo nenhuma animação
         activity.finish();
     }
 }

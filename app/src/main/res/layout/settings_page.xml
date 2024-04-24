@@ -12,7 +12,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/azul_unifor">
 
         <!-- Layout para ícones futuros -->
@@ -44,70 +44,99 @@
             android:layout_gravity="center">
 
             <!-- Botão Home -->
-            <ImageButton
-                android:id="@+id/homeButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:scaleType="centerInside"
-                android:src="@drawable/home" />
-
-            <Space
-                android:layout_width="70dp"
-                android:layout_height="match_parent" />
-
-            <!-- Botão Bússola -->
-            <ImageButton
-                android:id="@+id/compassButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:scaleType="centerInside"
-                android:src="@drawable/compass" />
-
-            <Space
-                android:layout_width="70dp"
-                android:layout_height="match_parent" />
-
-            <!-- Botão QR -->
-            <ImageButton
-                android:id="@+id/qrButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:scaleType="centerInside"
-                android:src="@drawable/qr" />
-
-            <Space
-                android:layout_width="70dp"
-                android:layout_height="match_parent" />
-
-            <!-- Botão Configurações -->
-            <LinearLayout
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_gravity="center">
 
-                <ImageButton
-                    android:id="@+id/settingsButton"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:background="@android:color/transparent"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/settings" />
+                <Button
+                    android:id="@+id/homeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparente" />
 
                 <ImageView
                     android:layout_width="30dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/selected"
-                    android:layout_gravity="bottom" />
-            </LinearLayout>
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- Botão Bússola -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center" >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparente"
+                    android:id="@+id/compassButton"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/compass"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center" >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparente"
+                    android:id="@+id/qrButton"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/qr"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="#05649F" >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparente"
+                    android:id="@+id/settingsButton"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/settings"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -115,9 +144,10 @@
     <LinearLayout
         android:id="@+id/configLayout"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="50dp" >
+
 
         <!-- Idiomas -->
         <LinearLayout
@@ -142,14 +172,13 @@
                 android:text="Idiomas" />
 
             <Space
-                android:layout_width="115dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent" />
 
             <Spinner
                 android:id="@+id/languagesSpinner"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:spinnerMode="dialog"/>
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <Space
@@ -180,7 +209,7 @@
                 android:text="Notificações" />
 
             <Space
-                android:layout_width="150dp"
+                android:layout_width="170dp"
                 android:layout_height="match_parent" />
 
             <Switch
@@ -188,7 +217,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                style="sans-serif-thin" />
+                />
         </LinearLayout>
 
         <Space
@@ -218,7 +247,7 @@
                 android:text="Suporte/Contato" />
 
             <Space
-                android:layout_width="180dp"
+                android:layout_width="130dp"
                 android:layout_height="match_parent" />
 
             <ImageButton
@@ -264,12 +293,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_below="@id/configLayout" >
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
         <Button
+            android:id="@+id/settingsAdmButton"
             android:layout_width="200dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
@@ -278,10 +312,6 @@
             android:text="Entrar como Adminstrador"
             android:textColor="@color/branco_unifor"
             android:textSize="16sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
 
     </LinearLayout>
 

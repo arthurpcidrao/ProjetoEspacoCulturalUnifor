@@ -10,136 +10,78 @@
 
     <!-- Barra Superior -->
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar1"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@color/azul_unifor">
-
-        <!-- Layout para ícones futuros -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <!-- Logo Unifor -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/teste_logo_saloes"/>
-        </LinearLayout>
-
-    </androidx.appcompat.widget.Toolbar>
-
-
-    <!-- Barra Inferior -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/azul_unifor"
-        android:layout_alignParentBottom="true">
+        android:background="@color/azul_unifor">
 
-        <!-- Layout para botões -->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center">
+            android:layout_height="match_parent">
 
-            <!-- Botão Home -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_gravity="center">
 
                 <Button
-                    android:id="@+id/homeButton"
+                    android:id="@+id/returnButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/transparente" />
+                    android:background="@color/transparente"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"/>
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/home"
+                    android:src="@drawable/return_arrow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-            <!-- Botão Bússola -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
+            <ImageView
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/teste_logo_home"
                 android:layout_gravity="center"
-                android:background="#05649F">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/transparente"
-                    android:id="@+id/compassButton"/>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/compass"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Botão QR code -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:layout_gravity="center" >
+                android:layout_gravity="center">
 
                 <Button
+                    android:id="@+id/optionsButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/transparente"
-                    android:id="@+id/qrButton"/>
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/options"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/qr"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Botão configurações -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_gravity="center" >
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/transparente"
-                    android:id="@+id/settingsButton"/>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/settings"/>
+                    app:layout_constraintTop_toTopOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         </LinearLayout>
+
+
+
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
@@ -160,7 +102,7 @@
             android:layout_gravity="center">
 
             <LinearLayout
-                android:id="@+id/salao1"
+                android:id="@+id/s1a1"
                 android:layout_width="170dp"
                 android:layout_height="120dp"
                 android:orientation="vertical"
@@ -172,12 +114,12 @@
                 <ImageView
                     android:layout_width="170dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/salao1" />
+                    android:src="@drawable/salao1arte1" />
 
                 <TextView
                     android:layout_width="170dp"
                     android:layout_height="30dp"
-                    android:text="Salão 1"
+                    android:text="Arte 1"
                     android:fontFamily="sans-serif-thin"
                     android:gravity="center" />
             </LinearLayout>
@@ -187,7 +129,7 @@
                 android:layout_height="match_parent" />
 
             <LinearLayout
-                android:id="@+id/salao2"
+                android:id="@+id/s1a2"
                 android:layout_width="170dp"
                 android:layout_height="120dp"
                 android:orientation="vertical"
@@ -199,12 +141,12 @@
                 <ImageView
                     android:layout_width="170dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/salao2" />
+                    android:src="@drawable/salao1arte2" />
 
                 <TextView
                     android:layout_width="170dp"
                     android:layout_height="30dp"
-                    android:text="Salão 2"
+                    android:text="Arte 2"
                     android:fontFamily="sans-serif-thin"
                     android:gravity="center" />
             </LinearLayout>
@@ -238,7 +180,7 @@
                 <TextView
                     android:layout_width="170dp"
                     android:layout_height="30dp"
-                    android:text="Salão 3"
+                    android:text="Arte 3"
                     android:fontFamily="sans-serif-thin"
                     android:gravity="center" />
             </LinearLayout>
@@ -265,7 +207,7 @@
                 <TextView
                     android:layout_width="170dp"
                     android:layout_height="30dp"
-                    android:text="Salão 4"
+                    android:text="Arte 4"
                     android:fontFamily="sans-serif-thin"
                     android:gravity="center" />
             </LinearLayout>
@@ -278,4 +220,6 @@
             android:layout_height="20dp" />
 
     </LinearLayout>
+
+
 </RelativeLayout>

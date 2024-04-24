@@ -4,15 +4,16 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 class HomePage : AppCompatActivity() {
 
-    private lateinit var btnSettings: ImageButton;
-    private lateinit var btnQr: ImageButton;
-    private lateinit var btnCompass: ImageButton;
+    private lateinit var btnSettings: Button;
+    private lateinit var btnQr: Button;
+    private lateinit var btnCompass: Button;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
