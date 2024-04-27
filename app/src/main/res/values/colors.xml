@@ -4,11 +4,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080</color>
     <color name="transparente">#00FFFFFF</color>
-    <color name="selecionado">#05649F</color>
-    <color name="azul_unifor">#0676BE</color>
+    <color name="selecionado">#1A4D95</color>
+    <color name="azul_unifor">#2D86C1</color>
     <color name="verde_unifor">#2F758C</color>
     <color name="roxo_unifor">#6711F3</color>
-    <color name="marinho_unifor">#0C007A</color>
+    <color name="marinho_unifor">#13238F</color>
     <color name="branco_unifor">#E4F2FE</color>
     <color name="settings_rectangle_bg">#F5F6FA</color>
     <color name="settings_rectangle_bg_alt">#D4DEFF</color>

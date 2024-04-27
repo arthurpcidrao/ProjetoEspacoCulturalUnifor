@@ -24,7 +24,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/teste_logo_saloes"/>
+                android:src="@drawable/teste_logo_home"/>
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -46,7 +46,7 @@
 
             <!-- Botão Home -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center">
 
@@ -70,7 +70,7 @@
 
             <!-- Botão Bússola -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:background="#05649F">
@@ -94,7 +94,7 @@
 
             <!-- Botão QR code -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center" >
 
@@ -117,7 +117,7 @@
 
             <!-- Botão configurações -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center" >
 
@@ -145,7 +145,7 @@
     <LinearLayout
         android:id="@+id/configLayout"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:orientation="vertical">
 

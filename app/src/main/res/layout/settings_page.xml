@@ -21,11 +21,11 @@
             android:layout_height="match_parent">
 
             <!-- Logo Unifor -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/teste_logo_config"/>
         </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/teste_logo_home"/>
 
     </androidx.appcompat.widget.Toolbar>
 

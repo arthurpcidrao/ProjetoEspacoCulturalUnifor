@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ProjetoEspacoCulturalUnifor</string>
+    <string name="projeto_espaco_cultural">ProjetoEspacoCulturalUnifor</string>
+    <string name="nome_do_autor">Beltrano de ALmeida</string>
 </resources>
