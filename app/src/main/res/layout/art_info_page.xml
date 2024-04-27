@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/branco_unifor"
-    tools:context=".ArtInfoPage" >
+    android:fitsSystemWindows="true"
+    tools:context=".ArtInfoPage">
 
     <!-- Barra Superior -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/azul_unifor"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="60dp"
-            android:layout_height="60dp" >
+            android:layout_height="60dp">
 
             <Button
                 android:id="@+id/returnButton"
@@ -26,19 +26,20 @@
                 android:background="@android:color/transparent" />
 
             <ImageView
-                android:visibility="visible"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/return_arrow"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/return_arrow" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
+            android:id="@+id/art_info_page"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center" >
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="280dp"
@@ -49,7 +50,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="60dp"
-            android:layout_height="60dp" >
+            android:layout_height="60dp">
 
             <Button
                 android:id="@+id/optionsButton"
@@ -60,47 +61,40 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/options"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/options" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="60dp" >
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="30dp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="180dp"
-            android:layout_height="240dp"
-            android:layout_gravity="center" >
+        <LinearLayout
+            android:id="@+id/s1a1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:background="@color/settings_rectangle_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onButtonClick">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="@color/gray" />
-
-            <ImageButton
-                android:id="@+id/button"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="5dp"
-                android:src="@drawable/expand"
-                android:background="@android:color/transparent"
-                android:scaleType="centerInside" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_width="350dp"
+                android:layout_height="225dp"
+                android:src="@drawable/salao1arte1" />
+        </LinearLayout>
 
         <Space
             android:layout_width="wrap_content"
@@ -109,27 +103,32 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            android:gravity="center" >
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/artName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-thin"
+                android:text="Nome da Obra (Data)"
                 android:textColor="@color/black"
-                android:textSize="24sp"
-                android:text="Nome da Obra (Data)" />
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/artAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-thin"
+                android:text="Nome do Autor"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="Nome do Autor" />
+                android:clickable="true"/>
         </LinearLayout>
 
         <Space
@@ -137,13 +136,14 @@
             android:layout_height="80dp" />
 
         <TextView
+            android:id="@+id/artDescription"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="sans-serif-thin"
+            android:text="lorem_ipsum"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="lorem_ipsum" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 </RelativeLayout>
