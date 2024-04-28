@@ -12,7 +12,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="64dp"
         android:background="@color/azul_unifor">
 
         <!-- Layout para ícones futuros -->
@@ -21,14 +21,13 @@
             android:layout_height="match_parent">
 
             <!-- Logo Unifor -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/teste_logo_home"/>
         </LinearLayout>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/teste_logo_home"/>
 
     </androidx.appcompat.widget.Toolbar>
-
     <!-- Barra Inferior -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -45,7 +44,7 @@
 
             <!-- Botão Home -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center">
 
@@ -69,7 +68,7 @@
 
             <!-- Botão Bússola -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center" >
 
@@ -92,7 +91,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center" >
 
@@ -115,7 +114,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:background="#05649F" >
@@ -146,7 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="50dp" >
+        android:layout_marginTop="64dp" >
 
 
         <!-- Idiomas -->
@@ -300,7 +299,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
+            android:layout_height="270dp" />
 
         <Button
             android:id="@+id/settingsAdmButton"

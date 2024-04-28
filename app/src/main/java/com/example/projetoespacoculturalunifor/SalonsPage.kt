@@ -21,6 +21,9 @@ class SalonsPage : AppCompatActivity() {
         setContentView(R.layout.salons_page)
 
         val btnSalon1: LinearLayout = findViewById(R.id.salao1)
+        val btnSalon2: LinearLayout = findViewById(R.id.salao2)
+        val btnSalon3: LinearLayout = findViewById(R.id.salao3)
+        val btnSalon4: LinearLayout = findViewById(R.id.salao4)
 
         btnSettings = findViewById(R.id.settingsButton);
         btnQr = findViewById(R.id.qrButton);
@@ -35,6 +38,19 @@ class SalonsPage : AppCompatActivity() {
         }
 
         btnSalon1.setOnClickListener{
+            Global.salon = "1";
+            changeScreen(this, ArtsPage1::class.java);
+        }
+        btnSalon2.setOnClickListener{
+            Global.salon = "2";
+            changeScreen(this, ArtsPage1::class.java);
+        }
+        btnSalon3.setOnClickListener{
+            Global.salon = "3";
+            changeScreen(this, ArtsPage1::class.java);
+        }
+        btnSalon4.setOnClickListener{
+            Global.salon = "4";
             changeScreen(this, ArtsPage1::class.java);
         }
 

@@ -54,7 +54,7 @@ class ArtInfoPage : AppCompatActivity(){
         }
 
         artAuthor.setOnClickListener {
-            changeScreen(this, HomePage::class.java);
+            changeScreen(this, ArtistsInfoPage::class.java);
         }
     }
 
