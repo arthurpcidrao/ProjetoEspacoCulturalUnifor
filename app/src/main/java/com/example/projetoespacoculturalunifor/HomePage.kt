@@ -24,12 +24,18 @@ class HomePage : AppCompatActivity() {
         btnQr = findViewById(R.id.qrButton);
         btnCompass = findViewById(R.id.compassButton);
 
+        val btnArtistsInfoPage = findViewById<Button>(R.id.artistButton1);
+
         btnSettings.setOnClickListener {
             changeScreen(this, SettingsPage::class.java);
         }
 
         btnCompass .setOnClickListener {
             changeScreen(this, SalonsPage::class.java);
+        }
+
+        btnArtistsInfoPage.setOnClickListener {
+            changeScreen(this, ArtistsInfoPage::class.java);
         }
     }
 

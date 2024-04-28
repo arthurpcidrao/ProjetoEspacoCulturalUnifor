@@ -14,4 +14,5 @@
     <color name="settings_rectangle_bg_alt">#D4DEFF</color>
     <color name="on">#00BF30</color>
     <color name="off">#FFFFFF</color>
+    <color name="white_but_a_little_darker">#CFCFCF</color>
 </resources>
