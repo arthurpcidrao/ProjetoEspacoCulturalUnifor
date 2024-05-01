@@ -16,4 +16,5 @@
     <color name="off">#FFFFFF</color>
     <color name="white_but_a_little_darker">#CFCFCF</color>
     <color name="add_btn">#06B37D</color>
+    <color name="logout_color">#970D63</color>
 </resources>

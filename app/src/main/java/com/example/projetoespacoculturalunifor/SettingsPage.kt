@@ -13,6 +13,7 @@ import android.widget.LinearLayout
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class SettingsPage : AppCompatActivity(){
 
@@ -30,6 +31,7 @@ class SettingsPage : AppCompatActivity(){
         val opcoes = arrayOf("Português", "English", "Español");
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, opcoes);
 
+
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         meuSpinner.adapter = adaptador
 
@@ -41,6 +43,17 @@ class SettingsPage : AppCompatActivity(){
         btnHome = findViewById(R.id.homeButton);
         btnCompass = findViewById(R.id.compassButton);
         btnQr = findViewById(R.id.qrButton);
+
+        val btnLogout = findViewById<ConstraintLayout>(R.id.btn_logout);
+
+        if (Global.adm){
+            admButton.visibility = View.GONE;
+            btnLogout.visibility = View.VISIBLE;
+        }
+        else{
+            admButton.visibility = View.VISIBLE;
+            btnLogout.visibility = View.GONE;
+        }
 
         supportButton.setOnClickListener{
             if (on) {

@@ -43,26 +43,26 @@ class AdmLoginPage : AppCompatActivity() {
         }
 
         val db = FirebaseFirestore.getInstance()
-        val collectionRef = db.collection("adms").document("adm1")
+        val collectionRef = db.collection("adms").document("WRVIKSIY57DBePotvuWd")
 
         val btnAccess = findViewById<Button>(R.id.accessAdm);
 
         btnAccess.setOnClickListener {
             collectionRef.get().addOnSuccessListener {
-                    if (it != null) {
-                        val loginDb = it.data?.get("login")?.toString();
-                        val passwordDb = it.data?.get("senha")?.toString();
+                if (it != null) {
+                    val loginDb = it.data?.get("login")?.toString();
+                    val passwordDb = it.data?.get("senha")?.toString();
 
-                        if (login.toString() == loginDb){
-                            Global.adm = true;
-                            changeScreen(this, HomePage::class.java);
-                        }
+                    if (login.text.toString() == loginDb && password.text.toString() == passwordDb){
+                        Global.adm = true;
+                        changeScreen(this, HomePage::class.java);
                     }
                 }
-                .addOnFailureListener{
-                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
-                    Global.adm = false;
-                }
+            }
+            .addOnFailureListener{
+                Toast.makeText(this, "Usuário não reconhecido", Toast.LENGTH_SHORT).show();
+                Global.adm = false;
+            }
         }
 
     }
