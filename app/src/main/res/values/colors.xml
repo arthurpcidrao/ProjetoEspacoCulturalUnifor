@@ -9,6 +9,7 @@
     <color name="verde_unifor">#2F758C</color>
     <color name="fundo_unifor">#13238F</color>
     <color name="marinho_unifor">#13238F</color>
+    <color name="marinho_unifor_pressed">#080F40</color>
     <color name="branco_unifor">#E4F2FE</color>
     <color name="settings_rectangle_bg">#F5F6FA</color>
     <color name="settings_rectangle_bg_alt">#D4DEFF</color>
@@ -16,5 +17,7 @@
     <color name="off">#FFFFFF</color>
     <color name="white_but_a_little_darker">#CFCFCF</color>
     <color name="add_btn">#06B37D</color>
+    <color name="add_btn_pressed">#04704F</color>
     <color name="logout_color">#970D63</color>
+    <color name="logout_color_pressed">#640841</color>
 </resources>

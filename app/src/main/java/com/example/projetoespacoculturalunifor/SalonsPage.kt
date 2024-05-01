@@ -27,18 +27,6 @@ class SalonsPage : AppCompatActivity() {
         val btnSalon3: LinearLayout = findViewById(R.id.salao3)
         val btnSalon4: LinearLayout = findViewById(R.id.salao4)
 
-        val btnAdd = findViewById<ConstraintLayout>(R.id.btn_add);
-        val btnOptions = findViewById<ConstraintLayout>(R.id.optionsButton);
-
-        if (Global.adm){
-            btnAdd.visibility = View.VISIBLE;
-            btnOptions.visibility = View.VISIBLE;
-        }
-        else{
-            btnAdd.visibility = View.GONE;
-            btnOptions.visibility = View.GONE;
-        }
-
         btnSettings = findViewById(R.id.settingsButton);
         btnQr = findViewById(R.id.qrButton);
         btnHome = findViewById(R.id.homeButton);
@@ -62,6 +50,18 @@ class SalonsPage : AppCompatActivity() {
         }
         btnSalon4.setOnClickListener{
             changeScreen(this, ArtsPage1::class.java);
+        }
+
+        val btnAdd = findViewById<ConstraintLayout>(R.id.btn_add);
+        val btnOptions = findViewById<ConstraintLayout>(R.id.optionsButton);
+
+        if (Global.adm){
+            btnAdd.visibility = View.VISIBLE;
+            btnOptions.visibility = View.VISIBLE;
+        }
+        else{
+            btnAdd.visibility = View.GONE;
+            btnOptions.visibility = View.GONE;
         }
 
     }

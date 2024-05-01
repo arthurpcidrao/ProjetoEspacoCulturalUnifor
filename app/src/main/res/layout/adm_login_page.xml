@@ -99,7 +99,7 @@
                 android:id="@+id/accessAdm"
                 android:layout_width="100dp"
                 android:layout_height="60dp"
-                android:background="@drawable/button_rounded"
+                android:background="@drawable/button_selector_rounded"
                 android:text="Acessar"
                 android:textColor="@color/branco_unifor" />
 

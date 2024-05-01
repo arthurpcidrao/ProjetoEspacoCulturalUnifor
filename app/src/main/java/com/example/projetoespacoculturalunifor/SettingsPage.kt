@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -67,6 +68,12 @@ class SettingsPage : AppCompatActivity(){
                 //supportButton.setImageDrawable(novaImagem)
                 //on = !on
             }
+        }
+
+        btnLogout.setOnClickListener {
+            changeScreen(this, HomePage::class.java);
+            Global.adm = false;
+            Toast.makeText(this, "saiu", Toast.LENGTH_SHORT).show();
         }
 
         btnHome.setOnClickListener {
