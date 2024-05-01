@@ -4,8 +4,11 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.ProgressBar
+import android.widget.RelativeLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
@@ -24,6 +27,13 @@ class ArtInfoPage : AppCompatActivity(){
         enableEdgeToEdge()
         setContentView(R.layout.art_info_page)
 
+        val progressBar = findViewById<ProgressBar>(R.id.loader)
+        progressBar.visibility = View.VISIBLE
+
+        val mainPage = findViewById<RelativeLayout>(R.id.mainContainer)
+        mainPage.visibility = View.INVISIBLE
+
+
         val db = FirebaseFirestore.getInstance();
         val docRef = db.collection("obras").document("yo0ut5eFXpbxLvMn9ABN");
 
@@ -41,10 +51,15 @@ class ArtInfoPage : AppCompatActivity(){
                 artName.text = "$name - $year";
                 artAuthor.text = author;
                 artDescription.text = description;
+
+                mainPage.visibility = View.VISIBLE
+                progressBar.visibility = View.INVISIBLE
             }
         }
             .addOnFailureListener{
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+                mainPage.visibility = View.INVISIBLE
+                progressBar.visibility = View.VISIBLE
             }
 
         val returnButton = findViewById<Button>(R.id.returnButton)

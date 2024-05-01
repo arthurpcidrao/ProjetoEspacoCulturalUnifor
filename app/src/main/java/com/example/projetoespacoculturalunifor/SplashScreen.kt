@@ -11,7 +11,7 @@ import android.os.Handler
 
 class SplashScreen : AppCompatActivity() {
 
-    private val SPLASH_TIME_OUT: Long = 2000 // Tempo de exibição da tela de abertura em milissegundos (2 segundos)
+    private val SPLASH_TIME_OUT: Long = 1500 // Tempo de exibição da tela de abertura em milissegundos (2 segundos)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

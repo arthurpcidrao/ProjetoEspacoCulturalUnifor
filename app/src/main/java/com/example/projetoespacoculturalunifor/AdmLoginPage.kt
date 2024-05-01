@@ -6,12 +6,15 @@ import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
 import android.text.InputType
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 
 class AdmLoginPage : AppCompatActivity() {
     var passwordVisible: Boolean = false
@@ -38,6 +41,30 @@ class AdmLoginPage : AppCompatActivity() {
         showPassword.setOnClickListener {
             togglePasswordView(password)
         }
+
+        val db = FirebaseFirestore.getInstance()
+        val collectionRef = db.collection("adms").document("adm1")
+
+        val btnAccess = findViewById<Button>(R.id.accessAdm);
+
+        btnAccess.setOnClickListener {
+            collectionRef.get().addOnSuccessListener {
+                    if (it != null) {
+                        val loginDb = it.data?.get("login")?.toString();
+                        val passwordDb = it.data?.get("senha")?.toString();
+
+                        if (login.toString() == loginDb){
+                            Global.adm = true;
+                            changeScreen(this, HomePage::class.java);
+                        }
+                    }
+                }
+                .addOnFailureListener{
+                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+                    Global.adm = false;
+                }
+        }
+
     }
 
     fun changeScreen(activity: Activity, clasS: Class<*>?) {

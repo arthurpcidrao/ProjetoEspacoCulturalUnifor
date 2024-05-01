@@ -4,10 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class SalonsPage : AppCompatActivity() {
 
@@ -25,6 +27,18 @@ class SalonsPage : AppCompatActivity() {
         val btnSalon3: LinearLayout = findViewById(R.id.salao3)
         val btnSalon4: LinearLayout = findViewById(R.id.salao4)
 
+        val btnAdd = findViewById<ConstraintLayout>(R.id.btn_add);
+        val btnOptions = findViewById<ConstraintLayout>(R.id.optionsButton);
+
+        if (Global.adm){
+            btnAdd.visibility = View.VISIBLE;
+            btnOptions.visibility = View.VISIBLE;
+        }
+        else{
+            btnAdd.visibility = View.GONE;
+            btnOptions.visibility = View.GONE;
+        }
+
         btnSettings = findViewById(R.id.settingsButton);
         btnQr = findViewById(R.id.qrButton);
         btnHome = findViewById(R.id.homeButton);
@@ -38,19 +52,15 @@ class SalonsPage : AppCompatActivity() {
         }
 
         btnSalon1.setOnClickListener{
-            Global.salon = "1";
             changeScreen(this, ArtsPage1::class.java);
         }
         btnSalon2.setOnClickListener{
-            Global.salon = "2";
             changeScreen(this, ArtsPage1::class.java);
         }
         btnSalon3.setOnClickListener{
-            Global.salon = "3";
             changeScreen(this, ArtsPage1::class.java);
         }
         btnSalon4.setOnClickListener{
-            Global.salon = "4";
             changeScreen(this, ArtsPage1::class.java);
         }
 

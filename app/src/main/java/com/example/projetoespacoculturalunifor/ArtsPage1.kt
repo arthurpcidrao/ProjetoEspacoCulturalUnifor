@@ -3,6 +3,7 @@ package com.example.projetoespacoculturalunifor
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
@@ -23,6 +24,18 @@ class ArtsPage1 : AppCompatActivity() {
 
         returnButton.setOnClickListener {
             changeScreen(this, SalonsPage::class.java)
+        }
+
+        val btnAdd = findViewById<Button>(R.id.btn_add);
+        val btnOptions = findViewById<Button>(R.id.optionsButton);
+
+        if (Global.adm){
+            btnAdd.visibility = View.GONE;
+            btnOptions.visibility = View.GONE;
+        }
+        else{
+            btnAdd.visibility = View.VISIBLE;
+            btnOptions.visibility = View.VISIBLE;
         }
 
     }

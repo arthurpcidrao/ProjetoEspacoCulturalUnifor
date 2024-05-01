@@ -15,4 +15,5 @@
     <color name="on">#00BF30</color>
     <color name="off">#FFFFFF</color>
     <color name="white_but_a_little_darker">#CFCFCF</color>
+    <color name="add_btn">#06B37D</color>
 </resources>

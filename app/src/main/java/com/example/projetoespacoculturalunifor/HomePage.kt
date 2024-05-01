@@ -27,11 +27,11 @@ class HomePage : AppCompatActivity() {
         val btnArtistsInfoPage = findViewById<Button>(R.id.artistButton1);
 
         btnSettings.setOnClickListener {
-            changeScreen(this, SettingsPage::class.java);
+            changeScreenWt(this, SettingsPage::class.java);
         }
 
         btnCompass .setOnClickListener {
-            changeScreen(this, SalonsPage::class.java);
+            changeScreenWt(this, SalonsPage::class.java);
         }
 
         btnArtistsInfoPage.setOnClickListener {
@@ -40,6 +40,12 @@ class HomePage : AppCompatActivity() {
     }
 
     private fun Context.changeScreen(activity: Activity, classs:Class<*>?){
+        val intent = Intent(activity, classs);
+        startActivity(intent);
+        activity.finish();
+    }
+
+    private fun Context.changeScreenWt(activity: Activity, classs:Class<*>?){
         val intent = Intent(activity, classs);
         startActivity(intent);
         activity.overridePendingTransition(0, 0); // Definindo nenhuma animação

@@ -8,209 +8,248 @@
     android:background="@color/white"
     tools:context=".HomePage" >
 
-    <!-- Barra Superior -->
-    <androidx.appcompat.widget.Toolbar
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/azul_unifor"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp">
-
-            <Button
-                android:id="@+id/returnButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/return_arrow"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
-            android:id="@+id/art_info_page"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="280dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:src="@drawable/teste_logo_home" />
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp">
-
-            <Button
-                android:id="@+id/optionsButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/options"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.appcompat.widget.Toolbar>
-
-    <LinearLayout
-        android:id="@+id/configLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical">
-
-
-        <Space
+        <!-- Barra Superior -->
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:background="@color/azul_unifor"
+            app:layout_constraintTop_toTopOf="parent">
+
 
             <LinearLayout
-                android:id="@+id/s1a1"
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:orientation="vertical"
-                android:background="@color/settings_rectangle_bg"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="onButtonClick">
+                android:id="@+id/art_info_page"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
                 <ImageView
-                    android:layout_width="170dp"
-                    android:layout_height="90dp"
-                    android:src="@drawable/salao1arte1" />
+                    android:layout_width="280dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/teste_logo_home" />
+            </LinearLayout>
 
-                <TextView
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/configLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/s1a1"
                     android:layout_width="170dp"
-                    android:layout_height="30dp"
-                    android:text="Arte 1"
-                    android:fontFamily="sans-serif-thin"
-                    android:gravity="center" />
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:background="@color/settings_rectangle_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onButtonClick">
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/salao1arte1" />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="30dp"
+                        android:text="Arte 1"
+                        android:fontFamily="sans-serif-thin"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/s1a2"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:background="@color/settings_rectangle_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onButtonClick">
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/salao1arte2" />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="30dp"
+                        android:text="Arte 2"
+                        android:fontFamily="sans-serif-thin"
+                        android:gravity="center" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="match_parent" />
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
 
             <LinearLayout
-                android:id="@+id/s1a2"
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:orientation="vertical"
-                android:background="@color/settings_rectangle_bg"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="onButtonClick">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-                <ImageView
+                <LinearLayout
+                    android:id="@+id/s1a3"
                     android:layout_width="170dp"
-                    android:layout_height="90dp"
-                    android:src="@drawable/salao1arte2" />
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:background="@color/settings_rectangle_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onButtonClick">
 
-                <TextView
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/salao3" />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="30dp"
+                        android:text="Arte 3"
+                        android:fontFamily="sans-serif-thin"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/s1a4"
                     android:layout_width="170dp"
-                    android:layout_height="30dp"
-                    android:text="Arte 2"
-                    android:fontFamily="sans-serif-thin"
-                    android:gravity="center" />
-            </LinearLayout>
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:background="@color/settings_rectangle_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onButtonClick">
 
-        </LinearLayout>
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/salao4" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="20dp" />
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="30dp"
+                        android:text="Arte 4"
+                        android:fontFamily="sans-serif-thin"
+                        android:gravity="center" />
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
 
-            <LinearLayout
-                android:id="@+id/s1a3"
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:orientation="vertical"
-                android:background="@color/settings_rectangle_bg"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="onButtonClick">
-
-                <ImageView
-                    android:layout_width="170dp"
-                    android:layout_height="90dp"
-                    android:src="@drawable/salao3" />
-
-                <TextView
-                    android:layout_width="170dp"
-                    android:layout_height="30dp"
-                    android:text="Arte 3"
-                    android:fontFamily="sans-serif-thin"
-                    android:gravity="center" />
             </LinearLayout>
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="match_parent" />
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
 
-            <LinearLayout
-                android:id="@+id/s1a4"
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:orientation="vertical"
-                android:background="@color/settings_rectangle_bg"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="onButtonClick">
-
-                <ImageView
-                    android:layout_width="170dp"
-                    android:layout_height="90dp"
-                    android:src="@drawable/salao4" />
-
-                <TextView
-                    android:layout_width="170dp"
-                    android:layout_height="30dp"
-                    android:text="Arte 4"
-                    android:fontFamily="sans-serif-thin"
-                    android:gravity="center" />
-            </LinearLayout>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="32sp"
+                android:text="@string/nome_do_autor" />
 
         </LinearLayout>
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="20dp" />
+    </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:textSize="32sp"
-            android:text="@string/nome_do_autor" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/add_btn_shape"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="85dp"
+        android:layout_marginEnd="30dp"
+        android:elevation="10dp">
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparente" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/plus_signal"
+            android:background="@drawable/add_btn_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:id="@+id/optionsButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/options"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="70dp"
+        android:layout_height="60dp">
+
+        <Button
+            android:id="@+id/returnButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/return_arrow"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>
