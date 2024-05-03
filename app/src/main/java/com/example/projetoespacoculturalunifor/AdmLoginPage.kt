@@ -52,6 +52,7 @@ class AdmLoginPage : AppCompatActivity() {
                 for (document in documents) {
                     val loginDb = document.getString("login")
                     val passwordDb = document.getString("senha")
+
                     if (login.text.toString() == loginDb && password.text.toString() == passwordDb){
                         Global.adm = true;
                         changeScreen(this, HomePage::class.java);

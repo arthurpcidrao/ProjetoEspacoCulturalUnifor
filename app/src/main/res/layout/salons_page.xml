@@ -142,146 +142,18 @@
                         android:src="@drawable/settings"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 
-        <LinearLayout
-            android:id="@+id/configLayout"
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="60dp"
+            tools:listitem="@layout/main_line_view"/>
 
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-
-                <LinearLayout
-                    android:id="@+id/salao1"
-                    android:layout_width="170dp"
-                    android:layout_height="120dp"
-                    android:orientation="vertical"
-                    android:background="@color/settings_rectangle_bg"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="onButtonClick">
-
-                    <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="90dp"
-                        android:src="@drawable/salao1" />
-
-                    <TextView
-                        android:layout_width="170dp"
-                        android:layout_height="30dp"
-                        android:text="Salão 1"
-                        android:fontFamily="sans-serif-thin"
-                        android:gravity="center" />
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent" />
-
-                <LinearLayout
-                    android:id="@+id/salao2"
-                    android:layout_width="170dp"
-                    android:layout_height="120dp"
-                    android:orientation="vertical"
-                    android:background="@color/settings_rectangle_bg"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="onButtonClick">
-
-                    <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="90dp"
-                        android:src="@drawable/salao2" />
-
-                    <TextView
-                        android:layout_width="170dp"
-                        android:layout_height="30dp"
-                        android:text="Salão 2"
-                        android:fontFamily="sans-serif-thin"
-                        android:gravity="center" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="20dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-
-                <LinearLayout
-                    android:id="@+id/salao3"
-                    android:layout_width="170dp"
-                    android:layout_height="120dp"
-                    android:orientation="vertical"
-                    android:background="@color/settings_rectangle_bg"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="onButtonClick">
-
-                    <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="90dp"
-                        android:src="@drawable/salao3" />
-
-                    <TextView
-                        android:layout_width="170dp"
-                        android:layout_height="30dp"
-                        android:text="Salão 3"
-                        android:fontFamily="sans-serif-thin"
-                        android:gravity="center" />
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent" />
-
-                <LinearLayout
-                    android:id="@+id/salao4"
-                    android:layout_width="170dp"
-                    android:layout_height="120dp"
-                    android:orientation="vertical"
-                    android:background="@color/settings_rectangle_bg"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="onButtonClick">
-
-                    <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="90dp"
-                        android:src="@drawable/salao4" />
-
-                    <TextView
-                        android:layout_width="170dp"
-                        android:layout_height="30dp"
-                        android:text="Salão 4"
-                        android:fontFamily="sans-serif-thin"
-                        android:gravity="center" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="20dp" />
-
-        </LinearLayout>
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

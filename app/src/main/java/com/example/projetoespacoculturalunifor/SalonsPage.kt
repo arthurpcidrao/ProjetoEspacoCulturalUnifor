@@ -10,6 +10,10 @@ import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import com.example.projetoespacoculturalunifor.models.Salons
 
 class SalonsPage : AppCompatActivity() {
 
@@ -17,15 +21,20 @@ class SalonsPage : AppCompatActivity() {
     private lateinit var btnQr: Button;
     private lateinit var btnHome: Button;
 
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: SalonsAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.salons_page)
 
-        val btnSalon1: LinearLayout = findViewById(R.id.salao1)
-        val btnSalon2: LinearLayout = findViewById(R.id.salao2)
-        val btnSalon3: LinearLayout = findViewById(R.id.salao3)
-        val btnSalon4: LinearLayout = findViewById(R.id.salao4)
+        recyclerView = findViewById(R.id.recycler_view)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
+
+        val salonsList = getListOfSalons()
+        adapter = SalonsAdapter(salonsList)
+        recyclerView.adapter = adapter
 
         btnSettings = findViewById(R.id.settingsButton);
         btnQr = findViewById(R.id.qrButton);
@@ -39,18 +48,18 @@ class SalonsPage : AppCompatActivity() {
             changeScreenWt(this, HomePage::class.java);
         }
 
-        btnSalon1.setOnClickListener{
-            changeScreen(this, ArtsPage1::class.java);
-        }
-        btnSalon2.setOnClickListener{
-            changeScreen(this, ArtsPage1::class.java);
-        }
-        btnSalon3.setOnClickListener{
-            changeScreen(this, ArtsPage1::class.java);
-        }
-        btnSalon4.setOnClickListener{
-            changeScreen(this, ArtsPage1::class.java);
-        }
+//        btnSalon1.setOnClickListener{
+//            changeScreen(this, ArtsPage1::class.java);
+//        }
+//        btnSalon2.setOnClickListener{
+//            changeScreen(this, ArtsPage1::class.java);
+//        }
+//        btnSalon3.setOnClickListener{
+//            changeScreen(this, ArtsPage1::class.java);
+//        }
+//        btnSalon4.setOnClickListener{
+//            changeScreen(this, ArtsPage1::class.java);
+//        }
 
         val btnAdd = findViewById<ConstraintLayout>(R.id.btn_add);
         val btnOptions = findViewById<ConstraintLayout>(R.id.optionsButton);
@@ -77,5 +86,16 @@ class SalonsPage : AppCompatActivity() {
         val intent = Intent(activity, classs);
         startActivity(intent);
         activity.finish();
+    }
+
+    private fun getListOfSalons(): List<Salons> {
+        // Aqui você deve retornar a lista de objetos Salons com os dados do seu banco de dados ou de onde quer que venham os dados
+        // Por enquanto, vamos retornar uma lista de exemplos
+        val list = mutableListOf<Salons>()
+        list.add(Salons("Salão 1", R.drawable.salao1))
+        list.add(Salons("Salão 2", R.drawable.salao2))
+        list.add(Salons("Salão 3", R.drawable.salao3))
+        // Adicione mais salões conforme necessário
+        return list
     }
 }
