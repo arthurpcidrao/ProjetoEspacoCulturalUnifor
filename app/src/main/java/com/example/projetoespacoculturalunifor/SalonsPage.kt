@@ -73,6 +73,12 @@ class SalonsPage : AppCompatActivity() {
             btnOptions.visibility = View.GONE;
         }
 
+        btnAdd.setOnClickListener {
+            changeScreen(this, CreateSalon::class.java);
+        }
+
+
+
     }
 
     private fun Context.changeScreenWt(activity: Activity, classs:Class<*>?){
