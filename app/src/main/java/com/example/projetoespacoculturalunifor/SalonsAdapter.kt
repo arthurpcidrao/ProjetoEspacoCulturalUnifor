@@ -1,5 +1,7 @@
 package com.example.projetoespacoculturalunifor
 
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
@@ -8,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetoespacoculturalunifor.models.Salons
@@ -28,6 +32,18 @@ class SalonsAdapter(private val salonsList: List<Salons>) :
 
         // Configurando a imagem no ShapeableImageView
         holder.imageView.setImageResource(currentSalon.image)
+
+        // Definir um listener de clique para o botão
+        holder.salonNumberButton.setOnClickListener {
+            // Abrir a tela de ArtsPage, passando o identificador único do salão como parâmetro extra
+            val intent = Intent(holder.itemView.context, ArtsPage1::class.java)
+            intent.putExtra("salonId", currentSalon.id)
+            holder.itemView.context.startActivity(intent)
+            Global.lastPage = SalonsPage::class.java
+
+            // Definir nenhuma animação de transição
+            (holder.itemView.context as Activity).overridePendingTransition(0, 0)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -37,5 +53,6 @@ class SalonsAdapter(private val salonsList: List<Salons>) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.name)
         val imageView: ImageView = itemView.findViewById(R.id.image)
+        val salonNumberButton: LinearLayout = itemView.findViewById(R.id.salao1)
     }
 }

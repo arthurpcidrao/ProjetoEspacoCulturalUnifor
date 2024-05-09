@@ -6,8 +6,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -42,34 +44,27 @@ class SalonsPage : AppCompatActivity() {
         btnHome = findViewById(R.id.homeButton);
 
         btnSettings.setOnClickListener {
+            Global.expoA = false;
             changeScreenWt(this, SettingsPage::class.java);
         }
 
         btnHome.setOnClickListener {
+            Global.expoA = false;
             changeScreenWt(this, HomePage::class.java);
         }
 
         btnQr.setOnClickListener {
+            Global.expoA = false;
             changeScreenWt(this, QrPage::class.java);
         }
 
-//        btnSalon1.setOnClickListener{
-//            changeScreen(this, ArtsPage1::class.java);
-//        }
-//        btnSalon2.setOnClickListener{
-//            changeScreen(this, ArtsPage1::class.java);
-//        }
-//        btnSalon3.setOnClickListener{
-//            changeScreen(this, ArtsPage1::class.java);
-//        }
-//        btnSalon4.setOnClickListener{
-//            changeScreen(this, ArtsPage1::class.java);
-//        }
 
         val btnAdd = findViewById<ConstraintLayout>(R.id.btn_add);
         val btnOptions = findViewById<ConstraintLayout>(R.id.optionsButton);
-        val addObra = findViewById<RelativeLayout>(R.id.addObra);
-        addObra.visibility = View.GONE;
+        val miniTela = findViewById<RelativeLayout>(R.id.idSalon);
+        val toolbar = findViewById<LinearLayout>(R.id.gerenciamento);
+
+        miniTela.visibility = View.GONE;
 
         if (Global.adm){
             btnAdd.visibility = View.VISIBLE;
@@ -82,7 +77,16 @@ class SalonsPage : AppCompatActivity() {
 
         btnAdd.setOnClickListener {
             btnAdd.visibility = View.GONE;
-            addObra.visibility = View.VISIBLE;
+            miniTela.visibility = View.VISIBLE;
+            toolbar.visibility = View.GONE;
+        }
+
+
+
+        val addSalon = findViewById<Button>(R.id.addSalon);
+
+        addSalon.setOnClickListener {
+
         }
 
 
@@ -106,9 +110,18 @@ class SalonsPage : AppCompatActivity() {
         // Aqui você deve retornar a lista de objetos Salons com os dados do seu banco de dados ou de onde quer que venham os dados
         // Por enquanto, vamos retornar uma lista de exemplos
         val list = mutableListOf<Salons>()
-        list.add(Salons("Salão 1", R.drawable.salao1))
-        list.add(Salons("Salão 2", R.drawable.salao2))
-        list.add(Salons("Salão 3", R.drawable.salao3))
+
+        if (Global.expoA){
+            list.add(Salons(1,"antiga 1", R.drawable.salao1))
+            list.add(Salons(2,"antiga 2", R.drawable.salao2))
+            list.add(Salons(3,"antiga 3", R.drawable.salao3))
+        }
+        else{
+            list.add(Salons(1,"Salão 1", R.drawable.salao1))
+            list.add(Salons(2,"Salão 2", R.drawable.salao2))
+            list.add(Salons(3,"Salão 3", R.drawable.salao3))
+        }
+
         // Adicione mais salões conforme necessário
         return list
     }

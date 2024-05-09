@@ -26,8 +26,15 @@ class HomePage : AppCompatActivity() {
 
         val btnArtistsInfoPage = findViewById<Button>(R.id.artistButton1);
 
+        val oldExpo = findViewById<Button>(R.id.oldExpositions);
+
         btnSettings.setOnClickListener {
             changeScreenWt(this, SettingsPage::class.java);
+        }
+
+        oldExpo.setOnClickListener {
+            Global.expoA = true;
+            changeScreen(this, SalonsPage::class.java);
         }
 
         btnQr.setOnClickListener {
