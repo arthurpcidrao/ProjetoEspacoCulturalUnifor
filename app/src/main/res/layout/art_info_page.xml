@@ -63,6 +63,7 @@
                 android:onClick="onButtonClick">
     
                 <ImageView
+                    android:id="@+id/imageView"
                     android:layout_width="350dp"
                     android:layout_height="225dp"
                     android:src="@drawable/salao1arte1" />

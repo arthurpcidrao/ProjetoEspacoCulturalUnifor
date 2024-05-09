@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -21,6 +23,12 @@ class ArtsPage1 : AppCompatActivity() {
 
         val btnAdd = findViewById<ConstraintLayout>(R.id.btn_add);
         val btnOptions = findViewById<ConstraintLayout>(R.id.optionsButton);
+
+        val excluir = findViewById<ImageView>(R.id.excluir);
+        val editar = findViewById<ImageView>(R.id.editar);
+
+        val cardEditar = findViewById<RelativeLayout>(R.id.card_editar)
+        val cardExcluir = findViewById<RelativeLayout>(R.id.card_excluir)
 
         if (Global.adm){
             btnAdd.visibility = View.VISIBLE;
@@ -38,6 +46,23 @@ class ArtsPage1 : AppCompatActivity() {
         returnButton.setOnClickListener {
             changeScreen(this, SalonsPage::class.java)
         }
+
+        excluir.visibility = View.GONE;
+        editar.visibility = View.GONE;
+
+        btnOptions.setOnClickListener {
+            excluir.visibility = View.VISIBLE;
+            editar.visibility = View.VISIBLE;
+        }
+
+        excluir.setOnClickListener {
+            cardExcluir.visibility = View.VISIBLE
+        }
+
+        editar.setOnClickListener {
+            cardEditar.visibility = View.VISIBLE
+        }
+
 
     }
 

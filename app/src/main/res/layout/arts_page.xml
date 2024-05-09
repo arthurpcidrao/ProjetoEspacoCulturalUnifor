@@ -52,28 +52,54 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
-                <LinearLayout
-                    android:id="@+id/s1a1"
+                <RelativeLayout
                     android:layout_width="170dp"
-                    android:layout_height="120dp"
-                    android:orientation="vertical"
-                    android:background="@color/settings_rectangle_bg"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="onButtonClick">
+                    android:layout_height="120dp" >
+
+                    <LinearLayout
+                        android:id="@+id/s1a1"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:orientation="vertical"
+                        android:background="@color/settings_rectangle_bg"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:onClick="onButtonClick">
+
+                        <ImageView
+                            android:layout_width="170dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/salao1arte1" />
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_height="30dp"
+                            android:text="Arte 1"
+                            android:fontFamily="sans-serif-thin"
+                            android:gravity="center" />
+                    </LinearLayout>
 
                     <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="90dp"
-                        android:src="@drawable/salao1arte1" />
-
-                    <TextView
-                        android:layout_width="170dp"
+                        android:id="@+id/editar"
+                        android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:text="Arte 1"
-                        android:fontFamily="sans-serif-thin"
-                        android:gravity="center" />
-                </LinearLayout>
+                        android:clickable="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/editar">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/excluir"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/excluir"
+                        android:layout_marginEnd="40dp">
+
+                    </ImageView>
+                </RelativeLayout>
 
                 <Space
                     android:layout_width="20dp"
@@ -350,6 +376,80 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <RelativeLayout
+        android:id="@+id/card_editar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:background="@color/branco_unifor">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/marinho_unifor"
+                android:layout_gravity="center" />
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:hint="nome" />
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:hint="ano"/>
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:hint="autor"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/card_excluir"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:background="@color/branco_unifor">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Vc deseja excluir?" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="NAO" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="SIM" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

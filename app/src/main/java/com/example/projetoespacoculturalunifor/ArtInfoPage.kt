@@ -4,8 +4,11 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.ScaleGestureDetector
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
@@ -72,6 +75,7 @@ class ArtInfoPage : AppCompatActivity(){
             changeScreen(this, ArtistsInfoPage::class.java);
         }
     }
+
 
     private fun changeScreen(activity: Activity, clasS: Class<*>?) {
         val intent = Intent(activity, clasS)
