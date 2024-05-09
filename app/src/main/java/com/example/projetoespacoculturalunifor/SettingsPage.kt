@@ -87,6 +87,10 @@ class SettingsPage : AppCompatActivity(){
         admButton.setOnClickListener{
             changeScreen(this, AdmLoginPage::class.java)
         }
+
+        btnQr.setOnClickListener{
+            changeScreenWt(this, QrPage::class.java)
+        }
     }
 
     private fun Context.changeScreenWt(activity: Activity, classs:Class<*>?){

@@ -59,10 +59,10 @@ class AdmLoginPage : AppCompatActivity() {
                         Toast.makeText(this, "Adm cadastrado", Toast.LENGTH_SHORT).show();
                         break;
                     }
-                    else{
-                        Toast.makeText(this, "Adm desconhecido", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
+                }
+
+                if (!Global.adm){
+                    Toast.makeText(this, "Adm desconhecido", Toast.LENGTH_SHORT).show();
                 }
             }
             .addOnFailureListener{

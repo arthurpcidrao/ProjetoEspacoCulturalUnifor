@@ -30,6 +30,10 @@ class HomePage : AppCompatActivity() {
             changeScreenWt(this, SettingsPage::class.java);
         }
 
+        btnQr.setOnClickListener {
+            changeScreenWt(this, QrPage::class.java);
+        }
+
         btnCompass .setOnClickListener {
             changeScreenWt(this, SalonsPage::class.java);
         }

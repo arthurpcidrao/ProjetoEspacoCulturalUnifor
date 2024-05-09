@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -48,6 +49,10 @@ class SalonsPage : AppCompatActivity() {
             changeScreenWt(this, HomePage::class.java);
         }
 
+        btnQr.setOnClickListener {
+            changeScreenWt(this, QrPage::class.java);
+        }
+
 //        btnSalon1.setOnClickListener{
 //            changeScreen(this, ArtsPage1::class.java);
 //        }
@@ -63,6 +68,8 @@ class SalonsPage : AppCompatActivity() {
 
         val btnAdd = findViewById<ConstraintLayout>(R.id.btn_add);
         val btnOptions = findViewById<ConstraintLayout>(R.id.optionsButton);
+        val addObra = findViewById<RelativeLayout>(R.id.addObra);
+        addObra.visibility = View.GONE;
 
         if (Global.adm){
             btnAdd.visibility = View.VISIBLE;
@@ -74,7 +81,8 @@ class SalonsPage : AppCompatActivity() {
         }
 
         btnAdd.setOnClickListener {
-            changeScreen(this, CreateSalon::class.java);
+            btnAdd.visibility = View.GONE;
+            addObra.visibility = View.VISIBLE;
         }
 
 

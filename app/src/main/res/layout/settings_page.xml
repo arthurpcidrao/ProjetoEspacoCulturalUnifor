@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/white"
+    android:background="@color/branco_unifor"
     tools:context=".SettingsPage" >
 
     <!-- Barra Superior -->
@@ -290,30 +290,18 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_below="@id/configLayout" >
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="270dp" />
-
-        <Button
-            android:id="@+id/settingsAdmButton"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:background="@drawable/button_selector_rounded"
-            android:fontFamily="sans-serif-thin"
-            android:text="Entrar como Adminstrador"
-            android:textColor="@color/branco_unifor"
-            android:textSize="16sp" />
-
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/settingsAdmButton"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_selector_rounded"
+        android:fontFamily="sans-serif-thin"
+        android:text="Entrar como Adminstrador"
+        android:textColor="@color/branco_unifor"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:layout_centerHorizontal="true"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
